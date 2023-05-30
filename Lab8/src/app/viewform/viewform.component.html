@@ -1,0 +1,36 @@
+<app-myform (tourAdd)="addTour($event)"></app-myform>
+<ion-card *ngFor="let tour of tours; let i=index">
+   <ion-card-header>
+      <ion-card-title>{{tour.tname}} - {{tour.ttype}}</ion-card-title>
+      <ion-card-subtitle>{{tour.tdated}} - {{tour.tdater}}</ion-card-subtitle>
+   </ion-card-header>
+   <ion-card-content>
+      {{tour.tdetails}} 
+      <h2>Price</h2>
+      {{tour.tprice}}
+   </ion-card-content>
+   <ion-button (click)="update()">Редагувати</ion-button>
+   <ion-button (click)="deleteTour(i)">Видалити</ion-button>
+   <app-updateform [tour]="tour" [show]="show_update" *ngIf="show_update" (showChange)="showUp($event)"
+      (tourChange)="update_save($event,i)"></app-updateform>
+</ion-card>
+
+
+<!-- <app-myform (courseAdd)="addCourse($event)"></app-myform>
+<ion-card *ngFor="let course of courses; let i=index">
+   <ion-card-header>
+      <ion-card-title>{{course.name}}</ion-card-title>
+      <ion-card-subtitle>{{course.semester}} - {{course.credit}}</ion-card-subtitle>
+   </ion-card-header>
+   <ion-card-content>
+      {{course.PIB_teacher}} - {{course.title_teacher}}
+      <h2>Groups</h2>
+      <ion-item *ngFor="let group of course.groups">
+         {{group}}
+      </ion-item>
+   </ion-card-content>
+   <ion-button (click)="update()">Редагувати</ion-button>
+   <ion-button (click)="deleteCourse(i)">Видалити</ion-button>
+   <app-updateform [course]="course" [show]="show_update" *ngIf="show_update" (showChange)="showUp($event)" 
+   (courseChange)="update_save($event,i)"></app-updateform>
+</ion-card> -->

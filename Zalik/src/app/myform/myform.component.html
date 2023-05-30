@@ -1,0 +1,18 @@
+<form [formGroup]="matrixForm" (ngsubmit)="onSubmit()">
+   <ion-card>
+      <ion-card-header>
+         <ion-card-title>Завдання</ion-card-title>
+         <ion-card-subtitle>Заповнити матрицю A[N,N] числами, що рівні добутку індексів. Елементи кратні 3 замінити на 43, кратні 7 на 47, кратні і 3 і 7 на 11.
+         Вивести початкову та отриману матрицю та виокремити всі числа, що було замінено за допомогою окремого кольору.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+         <ion-item>
+            <ion-label position="floating">Заповнити матрицю розміром N: </ion-label>
+            <ion-input id="n-size" type="number" formControlName="nSize"></ion-input>
+         </ion-item>
+      </ion-card-content>
+   </ion-card>
+   <ion-button type="submit" color="success" expand="block" [disabled]="!matrixForm.valid" (click)="onSubmit()">
+      Submit
+   </ion-button>
+</form>

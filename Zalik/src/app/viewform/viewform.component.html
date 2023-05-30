@@ -1,0 +1,26 @@
+<app-myform (matrixAdd)="addMatrix($event)"></app-myform>
+<ion-card *ngFor="let matrix of matrixes; let i=index">
+   <ion-card-header>
+      <ion-card-title>Розмір матриці - {{matrix.N}}</ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+      <ion-card-title>Початкова матриця:</ion-card-title>
+      <table>
+         <tr *ngFor="let row of matrix.initialMatrix; let rowIndex = index">
+            <td *ngFor="let cell of row; let colIndex = index">
+               {{ cell }}
+            </td>
+         </tr>
+      </table>
+      <ion-card-title>Модифікована матриця:</ion-card-title>
+      <table>
+         <tr *ngFor="let row of matrix.modifiedMatrix; let rowIndex = index">
+            <td *ngFor="let cell of row; let colIndex = index"
+               [style.background-color]="getBackgroundColor(matrix, rowIndex, colIndex)">
+               {{ cell }}
+            </td>
+         </tr>
+      </table>
+   </ion-card-content>
+   <ion-button (click)="deleteMatrix(i)">Видалити</ion-button>
+</ion-card>

@@ -1,0 +1,22 @@
+table {
+   width: 100%;
+   border-collapse: collapse;
+
+   th {
+      // background-color: #a8a5a5;
+      padding: 8px;
+      text-align: center;
+      font-weight: bold;
+   }
+
+   td {
+      background-color: #a8a5a5;
+      color: black;
+      padding: 8px;
+      text-align: center;
+   }
+
+   tr {
+      background-color: #a8a5a5;
+   }
+}

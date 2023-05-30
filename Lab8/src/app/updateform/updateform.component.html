@@ -1,0 +1,54 @@
+<ion-card>
+   <ion-card-header>
+      <ion-card-title>
+         <ion-label position="floating">Назва туру: </ion-label>
+         <ion-input [value]="tour.tname" #Inputname></ion-input>
+      </ion-card-title>
+      <ion-card-subtitle>
+         <h2>Тип туру: </h2>
+         <ion-radio-group [value]="tour.ttype" #Inputtype>
+            <ion-radio>Єгипет</ion-radio><br /><br />
+            <ion-radio>Турція</ion-radio><br />
+         </ion-radio-group>
+      </ion-card-subtitle>
+   </ion-card-header>
+   <ion-card-content>
+      <ion-label position="floating">Опис туру: </ion-label>
+      <ion-input [value]="tour.tdetails" #Inputdetails></ion-input>
+
+      <ion-label position="floating">Дата відправлення: </ion-label>
+      <ion-input [value]="tour.tdated" #Inputdated></ion-input>
+
+      <ion-label position="floating">Дата повернення: </ion-label>
+      <ion-input [value]="tour.tdater" #Inputdater></ion-input>
+
+      <ion-label position="floating">Ціна туру: </ion-label>
+      <ion-input [value]="tour.tprice" #Inputprice></ion-input>
+   </ion-card-content>
+   <ion-button
+(click)="save(Inputtype.value, Inputname.value, Inputdetails.value, Inputdated.value, Inputdater.value, Inputprice.value)">Зберігти</ion-button>
+</ion-card>
+
+<!-- <ion-card>
+   <ion-card-header>
+      <ion-card-title>
+         <ion-label position="floating">Назва дисципліни: </ion-label>
+         <ion-input [value]="course.name" #Inputname></ion-input>
+      </ion-card-title>
+      <ion-card-subtitle>
+         <ion-label position="floating">Кредити дисципліни: </ion-label>
+         <ion-input [value]="course.credit" #Inputcredit></ion-input>
+      </ion-card-subtitle>
+   </ion-card-header>
+   <ion-card-content>
+      <ion-label position="floating">ПІБ викладача: </ion-label>
+      <ion-input [value]="course.PIB_teacher" #InputPIB></ion-input>
+
+      <ion-label position="floating">Вчене звання викладача: </ion-label>
+      <ion-input [value]="course.title_teacher" #Inputtitle></ion-input>
+
+      <ion-label position="floating">Семестр, в якому читається дисципліна: </ion-label>
+      <ion-input [value]="course.semester" #Inputsem></ion-input>
+   </ion-card-content>
+   <ion-button (click)="save(Inputname.value, Inputcredit.value, InputPIB.value, Inputtitle.value, Inputsem.value)">Зберігти</ion-button>
+</ion-card> -->

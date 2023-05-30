@@ -1,0 +1,92 @@
+<form [formGroup]="tourForm" (ngsubmit)="onSubmit()">
+   <ion-card>
+      <ion-card-header>
+         <ion-card-title>Створення туру</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+         <ion-item>
+            <h2>Тип туру: </h2>
+         </ion-item>
+         <ion-item>
+            <ion-radio-group formControlName="tourType">
+               <ion-radio id="radio-Egypt" value="Egypt">Єгипет</ion-radio><br /><br />
+               <ion-radio id="radio-Turkey" value="Turkey">Турція</ion-radio><br />
+            </ion-radio-group>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Назва туру: </ion-label>
+            <ion-input id="tour-name" type="text" formControlName="tourName"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Опис туру: </ion-label>
+            <ion-input id="tour-details" type="text" formControlName="tourDetails"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Дата відправлення: </ion-label>
+            <ion-input id="tour-dated" type="text" formControlName="tourDated"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Дата повернення: </ion-label>
+            <ion-input id="tour-dater" type="text" formControlName="tourDater"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Ціна туру: </ion-label>
+            <ion-input id="tour-price" type="number" formControlName="tourPrice"></ion-input>
+         </ion-item>
+      </ion-card-content>
+   </ion-card>
+   <ion-button type="submit" color="success" expand="block" [disabled]="!tourForm.valid" (click)="onSubmit()">
+      Submit
+   </ion-button>
+</form>
+
+<!-- <form [formGroup]="courseForm" (ngsubmit)="onSubmit()">
+   <ion-card>
+      <ion-card-header>
+         <ion-card-title>Дисципліна</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+         <ion-item>
+            <ion-label position="floating">Назва дисципліни: </ion-label>
+            <ion-input id="course-name" type="text" formControlName="courseName"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Кредити дисципліни: </ion-label>
+            <ion-input id="course-credit" type="number" formControlName="courseCredit"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">ПІБ викладача: </ion-label>
+            <ion-input id="course-pib" type="text" formControlName="Pib"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Вчене звання викладача: </ion-label>
+            <ion-input id="course-title" type="text" formControlName="Title"></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label position="floating">Семестр, в якому читається дисципліна: </ion-label>
+            <ion-input id="course-semester" type="number" formControlName="courseSemester"></ion-input>
+         </ion-item>
+         <ion-card formArrayName="groups">
+            <ion-card-header>
+               <ion-card-title>Групи</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+               <ion-button color="tertiary" (click)="addGroup()">
+                  <ion-icon slot="start" name="add"></ion-icon>
+                  Додати групу
+               </ion-button>
+               <ion-item *ngFor="let group of getControls(); let i = index">
+                  <ion-input type="text" formControlName={{i}} placeholder="Назва групи"></ion-input>
+                  <ion-button color="tertiary" (click)="deleteGroup(i)">
+                     <ion-icon slot="start" name="trash"></ion-icon>
+                     Видалити
+                  </ion-button>
+               </ion-item>
+            </ion-card-content>
+         </ion-card>
+      </ion-card-content>
+   </ion-card>
+   <ion-button type="submit" color="success" expand="block" [disabled]="!courseForm.valid" (click)="onSubmit()">
+      Submit
+   </ion-button>
+</form> -->
